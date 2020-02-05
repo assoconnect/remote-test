@@ -1,5 +1,8 @@
 # AssoConnect - Remote technical test
 
+* **DO NOT FORK THIS REPO**
+* **DO NOT OPEN A PULL REQUEST**
+
 ## Context
 
 This project contains a basic Docker configuration to run:
