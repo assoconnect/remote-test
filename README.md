@@ -1,5 +1,8 @@
 # AssoConnect - Remote technical test
 
+* **DO NOT FORK THIS REPO**
+* **DO NOT OPEN A PULL REQUEST**
+
 ## Context
 
 This project contains a basic Docker configuration to run:
@@ -13,7 +16,18 @@ This project contains a basic Docker configuration to run:
 * The instructions will be sent to you by **email** at the beginning of your **2 hour** time slot.
 * These instructions will not be very precise on purpose.
 * We suggest you to follow the instructions in the given **order**, but you will be able to do what you feel is the most important.
-* You will be able to use any relevant vendor or library.
+* You will be able to use any relevant vendor or library (
+  [Messenger](https://symfony.com/doc/current/components/messenger.html), 
+  [Cache](https://symfony.com/doc/current/components/cache.html), 
+  [Serializer](https://symfony.com/doc/current/components/serializer.html), 
+  [MakerBundle](https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html), 
+  [Validator](https://symfony.com/doc/current/components/validator.html), 
+  [EventDispatcher](https://symfony.com/doc/current/components/event_dispatcher.html), 
+  [Form](https://symfony.com/doc/current/components/form.html), 
+  [DependencyInjection](https://symfony.com/doc/current/components/dependency_injection.html), 
+  [PHPUnit Bridge](https://symfony.com/doc/current/components/phpunit_bridge.html),
+  [API Platform](https://api-platform.com/)
+).
 * We will not run the app, do not waste time on configuration issues.
 * We will focus on the code you have produced, the general logic, the choices and the quality.
 * Quality will be more important than quantity.
@@ -38,6 +52,7 @@ It is very important that you do these tasks before the beginning of the test. W
    *  Running `docker-compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
 1. Give us your **Github username** so we can add you as a collaborator.
 
+<<<<<<< HEAD
 
 > ##  Tuning Docker configuration
 > By default, the apps are available at:
@@ -48,6 +63,17 @@ It is very important that you do these tasks before the beginning of the test. W
 > And the MySQL installation comes with the user root, and password root.
 > 
 > If you know what you're doing, and want to modify the ports defined, you can update the values in the .env from the root folder.
+=======
+###  Tuning Docker configuration
+By default, the apps are available at:
+* http://localhost:8000 for the Symfony App;
+* http://localhost:3000 for the React App;
+* http://localhost:8080 for the Adminer interface.
+
+And the MySQL installation comes with the user `root`, and password `root`.
+
+If you know what you're doing, and want to modify the ports defined, you can update the values in the `.env` file at the root of the repo.
+>>>>>>> 601acd656341cd8165a18a3cb6c13d8ec3db6936
 
 ## TODO after the test
 
