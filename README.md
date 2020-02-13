@@ -38,7 +38,8 @@ It is very important that you do these tasks before the beginning of the test. W
    *  Running `docker-compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
 1. Give us your **Github username** so we can add you as a collaborator.
 
-> ###  Tuning Docker configuration
+
+> ##  Tuning Docker configuration
 > By default, the apps are available at:
 > * http://localhost:8000 for the Symfony App;
 > * http://localhost:3000 for the React App;
@@ -58,3 +59,27 @@ It is very important that you do these tasks before the beginning of the test. W
 1. Send us a message explaining :
 * what you have done and why you have done it this way
 * what you haven't done, why you haven't done it, and how you would have done it
+
+---
+## Troubleshooting
+### 1. How to run a PHP command
+To run a command (like a Symfony or Composer command), you will need to execute it via `docker-compose`, prefixing it with `docker-compose exec php`.
+
+For example, to create a database with the MySQL connection, you will have to run `docker-compose exec php php bin/console doctrine:database:create`. 
+To add a package to Composer, you will have to run `docker-compose exec php composer require <your-package>`
+
+### 2. How to connect to the MySQL container
+The connection to your database URL is managed throught the `DATABASE_URL` set in the `apps/backend/.env` file. Because we are in a Docker environment, with our services running in distinct containers, you have to reference the MySQL container for the connection :
+
+`DATABASE_URL=mysql://root:root@mysql:3306/db_name`
+
+Note the **mysql@3306** referencing the port 3306 from the `mysql` container.
+
+### 3. Error in YAML file when running a `docker-compose` command
+If you have an error looking like:
+```bash
+ERROR: The Compose file './../docker-compose.override.yml' is invalid because:
+...
+...
+```
+Check that you are running your command from the **root** folder of the Docker installation and not a subfolder.

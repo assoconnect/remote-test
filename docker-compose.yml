@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-    db: 
+    mysql: 
         image: mysql:latest
         restart: on-failure
         environment:
@@ -10,7 +10,7 @@ services:
         image: adminer
         restart: on-failure
         depends_on: 
-            - db
+            - mysql
     nginx:
         image: nginx:alpine
         restart: on-failure
@@ -25,6 +25,8 @@ services:
             - .env
             - apps/backend/.env
         user: ${LOCAL_USER}
+        links:
+            - mysql
     react:
         build:
             context: .
