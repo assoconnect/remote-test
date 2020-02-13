@@ -52,18 +52,6 @@ It is very important that you do these tasks before the beginning of the test. W
    *  Running `docker-compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
 1. Give us your **Github username** so we can add you as a collaborator.
 
-<<<<<<< HEAD
-
-> ##  Tuning Docker configuration
-> By default, the apps are available at:
-> * http://localhost:8000 for the Symfony App;
-> * http://localhost:3000 for the React App;
-> * http://localhost:8080 for the Adminer interface.
->
-> And the MySQL installation comes with the user root, and password root.
-> 
-> If you know what you're doing, and want to modify the ports defined, you can update the values in the .env from the root folder.
-=======
 ###  Tuning Docker configuration
 By default, the apps are available at:
 * http://localhost:8000 for the Symfony App;
@@ -73,7 +61,6 @@ By default, the apps are available at:
 And the MySQL installation comes with the user `root`, and password `root`.
 
 If you know what you're doing, and want to modify the ports defined, you can update the values in the `.env` file at the root of the repo.
->>>>>>> 601acd656341cd8165a18a3cb6c13d8ec3db6936
 
 ## TODO after the test
 
