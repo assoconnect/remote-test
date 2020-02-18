@@ -17,7 +17,7 @@ This project contains a basic Docker configuration to run:
 * These instructions will not be very precise on purpose.
 * We suggest you to follow the instructions in the given **order**, but you will be able to do what you feel is the most important.
 * You will be able to use any relevant vendor or library :
-** Backend :
+  * Backend :
   [Messenger](https://symfony.com/doc/current/components/messenger.html), 
   [Cache](https://symfony.com/doc/current/components/cache.html), 
   [Serializer](https://symfony.com/doc/current/components/serializer.html), 
@@ -28,7 +28,7 @@ This project contains a basic Docker configuration to run:
   [DependencyInjection](https://symfony.com/doc/current/components/dependency_injection.html), 
   [PHPUnit Bridge](https://symfony.com/doc/current/components/phpunit_bridge.html),
   [API Platform](https://api-platform.com/)
-** Frontend : 
+  * Frontend : 
   [Formik](https://jaredpalmer.com/formik/docs/api/formik),
   [Cypress](https://docs.cypress.io/examples/examples/recipes.html#Fundamentals)
 * We will not run the app, do not waste time on configuration issues.
