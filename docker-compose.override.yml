@@ -3,6 +3,8 @@ services:
     php:
         volumes:
             - './apps/backend/:/usr/src/backend'
+        # comment this if not using sudo
+        user: ${LOCAL_USER}
     nginx:
         volumes:
             - './apps/backend/public/:/usr/src/backend'
@@ -15,6 +17,8 @@ services:
     react:
         volumes:
             - './apps/frontend:/usr/src/frontend'
-            - '/usr/src/frontend/node_modules'
+            # Uncomment this to share the node_modules with the filesystem
+            # It is quiet slow so prefer keeping commented and install node_modules locally (outside docker) to have type hinting.
+            #- './apps/frontend/node_modules:/usr/src/frontend/node_modules'
         ports:
             - '${REACT_PORT}:3000'

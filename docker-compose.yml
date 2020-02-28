@@ -1,7 +1,7 @@
 version: '3.7'
 services:
-    mysql: 
-        image: mysql:latest
+    mysql:
+        image: mysql:5
         restart: on-failure
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -14,24 +14,26 @@ services:
     nginx:
         image: nginx:alpine
         restart: on-failure
-        depends_on: 
+        depends_on:
             - php
     php:
+        image: ${DOCKER_PHP_IMAGE}
         build:
             context: .
             dockerfile: docker/php/Dockerfile
+            cache_from:
+                - ${DOCKER_PHP_IMAGE}
         restart: on-failure
         env_file:
             - .env
-            - apps/backend/.env
-        user: ${LOCAL_USER}
-        links:
+        depends_on:
             - mysql
     react:
+        image: ${DOCKER_NODE_IMAGE}
         build:
             context: .
             dockerfile: docker/react/Dockerfile
+            cache_from:
+                - ${DOCKER_NODE_IMAGE}
         env_file:
             - .env
-            - apps/frontend/.env
-        
