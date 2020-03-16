@@ -62,7 +62,7 @@ By default, the apps are available at:
 * http://localhost:3000 for the React App;
 * http://localhost:8080 for the Adminer interface.
 
-And the MySQL installation comes with the user `root`, and password `root`.
+And the MySQL installation comes with the user `root`, password `root`, and `mysql` as a server host.
 
 If you know what you're doing, and want to modify the ports defined, you can update the values in the `.env` file at the root of the repo.
 
