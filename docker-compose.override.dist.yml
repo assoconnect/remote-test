@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+    php:
+        volumes:
+            # To optimize loading of vendor for mac os and windows keep it inside the container
+            # Uncomment this to keep your vendors dir inside the container
+            #- php_vendor:/usr/src/backend/vendor
+    react:
+        volumes:
+            # To optimize loading of node_modules for mac os and windows keep it inside the container
+            # Uncomment this to keep your node_modules dir inside the container
+            #- node_modules:/usr/src/frontend/node_modules
+volumes:
+    # Uncomment this for the previous optimizations to work
+    #php_vendor:
+    #node_modules:
+
