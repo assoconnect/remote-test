@@ -58,6 +58,8 @@ For Mac and Windows users, there is some commented changes to optimize the loadi
    *  Running `docker-compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
 1. Give us your **Github username** so we can add you as a collaborator.
 
+> If you are running Docker under Windows, the address your site will be accessible is not localhost, but an IP you can find in the first lines of the `Docker Quickstart Terminal` when you open it.
+
 ###  Tuning Docker configuration
 By default, the apps are available at:
 * http://localhost:8000 for the Symfony App;
@@ -107,17 +109,17 @@ Check that you are running your command from the **root** folder of the Docker i
 If you're facing "Couln'd connect to Docker Daemon at http+docker://localunixsocket — is it running?" error, refer to
   [this help](https://medium.com/developer-space/if-you-faced-an-issue-like-couldnt-connect-to-docker-daemon-at-http-docker-localunixsocket-is-27b35f17d09d))
 
-## Install Docker
+## Install Docker <a href="install-docker"></a>
 ### Windows
-
 If you have a recent enough Windows, you can download and install [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/).
 
 If you don't meet the system requirements written on this page, you will have to download the older version [Docker toolbox](https://github.com/docker/toolbox/releases). Download and execute the most recent `.exe` from this list.
 
 If you have an error while launching `Docker Quickstart Terminal` afterwards, it might be because of an outdated VirtualBox version. Try downloading the latest version from the [VirtualBox website](https://www.virtualbox.org/wiki/Downloads).
 
-### Ubuntu
 
+
+### Ubuntu
 You can follow this good tutorial for installing [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) and [Docker Composer](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04).
 
 Follow [this link](https://medium.com/developer-space/if-you-faced-an-issue-like-couldnt-connect-to-docker-daemon-at-http-docker-localunixsocket-is-27b35f17d09d) to avoid using sudo in the docker context if it's not already the case.
