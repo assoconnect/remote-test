@@ -40,13 +40,13 @@ This project contains a basic Docker configuration to run:
 
 It is very important that you do these tasks before the beginning of the test. We don't want you to spend some time struggling with your development environment. You will need all the time you can have to go as far as possible in the instructions.
 
-1. Install [Docker engine](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) to their latest versions for your OS
-1. Follow [this link](https://medium.com/developer-space/if-you-faced-an-issue-like-couldnt-connect-to-docker-daemon-at-http-docker-localunixsocket-is-27b35f17d09d) to avoid using sudo in the docker context (linux users).
+
+1. Install [Docker engine](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) to their latest versions for your OS. (see [Install Docker](#install-docker))
 1. Clone the project in your local environment.
-1. Copy, if needed the `docker-compose.override.dist.yml to docker-compose.override.yml` to override the default docker configuration :
-For mac and windows users, there is some commented changes to optimize the loading of the stack. You will have to install the vendor and the node_modules locally so your editor can have type hinting.
-1. Build the Docker containers by running `docker-compose build` in the root folder of the project
-1. Launch the containers by running `docker-compose up` in the root folder of the project
+1. Copy, if needed the `docker-compose.override.dist.yml` to `docker-compose.override.yml` to override the default docker configuration :
+For Mac and Windows users, there is some commented changes to optimize the loading of the stack. You will have to install the vendor and the node_modules locally so your editor can have type hinting.
+1. Build the Docker containers by running `docker-compose build` (or `docker-compose.exe build` for Windows from the `Docker Quickstart terminal`) in the root folder of the project
+1. Launch the containers by running `docker-compose up` (or `docker-compose.exe up` from the `Docker Quickstart terminal` for Windows) in the root folder of the project
 1. Make sure the project is running correctly :
    * `GET localhost:8000/blog` should **return this JSON** :
    ```json
@@ -102,3 +102,22 @@ ERROR: The Compose file './../docker-compose.override.yml' is invalid because:
 ...
 ```
 Check that you are running your command from the **root** folder of the Docker installation and not a subfolder.
+
+### 4. Problem connecting to the Docker Daemon socket
+If you're facing "Couln'd connect to Docker Daemon at http+docker://localunixsocket — is it running?" error, refer to
+  [this help](https://medium.com/developer-space/if-you-faced-an-issue-like-couldnt-connect-to-docker-daemon-at-http-docker-localunixsocket-is-27b35f17d09d))
+
+## Install Docker
+### Windows
+
+If you have a recent enough Windows, you can download and install [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/).
+
+If you don't meet the system requirements written on this page, you will have to download the older version [Docker toolbox](https://github.com/docker/toolbox/releases). Download and execute the most recent `.exe` from this list.
+
+If you have an error while launching `Docker Quickstart Terminal` afterwards, it might be because of an outdated VirtualBox version. Try downloading the latest version from the [VirtualBox website](https://www.virtualbox.org/wiki/Downloads).
+
+### Ubuntu
+
+You can follow this good tutorial for installing [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) and [Docker Composer](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04).
+
+Follow [this link](https://medium.com/developer-space/if-you-faced-an-issue-like-couldnt-connect-to-docker-daemon-at-http-docker-localunixsocket-is-27b35f17d09d) to avoid using sudo in the docker context if it's not already the case.
