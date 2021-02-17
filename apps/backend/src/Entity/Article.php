@@ -17,10 +17,10 @@ class Article
     private int $id;
 
     /** @ORM\Column(type="string", length=255) */
-    private ?string $title;
+    private string $title;
 
     /** @ORM\Column(type="text") */
-    private ?string $content;
+    private string $content;
 
     /** @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", cascade={"remove"}, orphanRemoval=true) */
     private Collection $comments;
@@ -31,17 +31,20 @@ class Article
      */
     private ?Comment $lastComment;
 
-    public function __construct()
+    public function __construct(string $title, string $content)
     {
+        $this->title = $title;
+        $this->content = $content;
+
         $this->comments = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -51,7 +54,7 @@ class Article
         $this->title = $title;
     }
 
-    public function getContent(): ?string
+    public function getContent(): string
     {
         return $this->content;
     }
