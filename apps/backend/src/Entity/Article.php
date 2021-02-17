@@ -25,6 +25,12 @@ class Article
     /** @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", cascade={"remove"}, orphanRemoval=true) */
     private Collection $comments;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Comment::class)
+     * @ORM\JoinColumn(name="last_comment_id", referencedColumnName="id", onDelete="cascade")
+     */
+    private ?Comment $lastComment;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -60,8 +66,15 @@ class Article
         return $this->comments;
     }
 
+    /** @return Collection<Comment> */
     public function addComment(Comment $comment): void
     {
         $this->comments->add($comment);
+        $this->lastComment = $comment;
+    }
+
+    public function getLastComment(): ?Comment
+    {
+        return $this->lastComment;
     }
 }
