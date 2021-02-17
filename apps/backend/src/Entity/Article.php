@@ -28,6 +28,14 @@ class Article
      */
     private $content;
 
+    /** @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", cascade={"remove"}, orphanRemoval=true) */
+    private Collection $comments;
+
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,7 +61,15 @@ class Article
     public function setContent(string $content): self
     {
         $this->content = $content;
+    }
 
-        return $this;
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): void
+    {
+        $this->comments->add($comment);
     }
 }
