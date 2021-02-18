@@ -28,6 +28,12 @@ class Article
      */
     private $content;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\comment", mappedBy="article")
+     */
+    private $comments;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -36,6 +42,16 @@ class Article
     public function getTitle(): ?string
     {
         return $this->title;
+    }
+
+    public function getComments(): ?Collection
+    {
+        return $this->comments;
+    }
+
+    public function getLastCommment(): ?Comment
+    {
+        return $this->comments->last();
     }
 
     public function setTitle(string $title): self
@@ -53,6 +69,13 @@ class Article
     public function setContent(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function setComment(?Comment $comment): self
+    {
+        $this->comment = $comment;
 
         return $this;
     }

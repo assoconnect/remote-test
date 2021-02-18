@@ -1,3 +1,14 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+article_show:
+  path: /article/{articleId}
+  controller: App\Controller\Article::show
+
+article_store:
+  path: /article/{articleId}
+  controller: App\Controller\Article::show
+
+comment_store:
+  path: /article/{articleId}/comment
+  controller: App\Controller\Comment::store
