@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -15,18 +16,31 @@ class Article
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("article")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("article")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("article")
      */
     private $content;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", cascade={"persist"}, mappedBy="article")
+     */
+    private $comments;
+
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -55,5 +69,52 @@ class Article
         $this->content = $content;
 
         return $this;
+    }
+
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->contains($comment)) {
+            $this->comments->removeElement($comment);
+
+            if ($comment->getArticle() === $this) {
+                $comment->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getLastComment(): ?Comment
+    {
+        if (count($this->comments) === 0) {
+            return null;
+        }
+
+        foreach ($this->comments as $comment) {
+            $date = $comment->getPublicationDate();
+
+            if (!isset($prevDate) || $date > $prevDate) {
+                $lastComment = $comment;
+            }
+
+            $prevDate = $date;
+        }
+
+        return $lastComment;
     }
 }
