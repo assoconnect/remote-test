@@ -62,9 +62,9 @@ For Mac and Windows users, there is some commented changes to optimize the loadi
 
 ###  Tuning Docker configuration
 By default, the apps are available at:
-* http://localhost:8000 for the Symfony App;
-* http://localhost:3000 for the React App;
-* http://localhost:8080 for the Adminer interface.
+* http://localhost:8001 for the Symfony App;
+* http://localhost:3001 for the React App;
+* http://localhost:8081 for the Adminer interface.
 
 And the MySQL installation comes with the user `root`, password `root`, and `mysql` as a server host.
 

@@ -9,7 +9,7 @@ services:
         env_file:
             - .env
     adminer:
-        image: adminer
+        image: adminer:latest
         restart: on-failure
         environment:
             ADMINER_DEFAULT_SERVER: 'mysql'

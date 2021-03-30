@@ -34,7 +34,7 @@ COPY docker/php/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/app.ini
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN set -eux; \
-	composer global require "symfony/flex" --prefer-dist --no-progress --no-suggest --classmap-authoritative; \
+	composer global require "symfony/flex" --prefer-dist --no-progress --classmap-authoritative; \
 	composer clear-cache
 ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
@@ -42,7 +42,7 @@ WORKDIR /usr/src/backend
 
 COPY apps/backend/composer.json apps/backend/composer.lock apps/backend/symfony.lock ./
 RUN set -eux; \
-	composer install --prefer-dist --no-scripts --no-progress --no-suggest; \
+	composer install --prefer-dist --no-scripts --no-progress; \
 	composer clear-cache
 
 VOLUME /usr/src/backend/var
