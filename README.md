@@ -6,7 +6,7 @@
 ## Context
 
 This project contains a basic Docker configuration to run:
-* A minimal installation of **Symfony5** running under **PHP7.4**, to serve as a **RESTful API** for a blogging CMS;
+* A minimal installation of **Symfony5** running under **PHP8.0**, to serve as a **RESTful API** for a blogging CMS;
 * A **CreateReactApp** starter instantiated with Typescript;
 * A **Mysql8** server with and **Adminer** web interface.
 
@@ -27,7 +27,7 @@ This project contains a basic Docker configuration to run:
   [Form](https://symfony.com/doc/current/components/form.html),
   [DependencyInjection](https://symfony.com/doc/current/components/dependency_injection.html),
   [PHPUnit Bridge](https://symfony.com/doc/current/components/phpunit_bridge.html),
-  [API Platform](https://api-platform.com/)
+  [API Platform](https://api-platform.com/), ...
   * Frontend :
   [Formik](https://jaredpalmer.com/formik/docs/api/formik),
   [Cypress](https://docs.cypress.io/examples/examples/recipes.html#Fundamentals)
