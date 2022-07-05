@@ -72,14 +72,8 @@ If you know what you're doing, and want to modify the ports defined, you can upd
 
 ## TODO after the test
 
-1. Submit your code in a **new branch**
-1. We'll get your code and delete your branch to keep your work private
-1. **DO NOT FORK THIS REPO**.
-1. **DO NOT OPEN A PULL REQUEST**
-1. Let us know when you are done
-1. Send us a message explaining :
-* what you have done and why you have done it this way
-* what you haven't done, why you haven't done it, and how you would have done it
+1. Push your code to a private repositoy you own whitout forking this repo
+2. Invite `@sylfabre` to this private repository
 
 ---
 ## Troubleshooting
