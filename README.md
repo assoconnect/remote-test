@@ -10,32 +10,6 @@ This project contains a basic Docker configuration to run:
 * A **CreateReactApp** starter instantiated with Typescript;
 * A **Mysql8** server with and **Adminer** web interface.
 
-
-## Instructions tips
-
-* The instructions will be sent to you by **email** at the beginning of your **2 hour** time slot.
-* These instructions will not be very precise on purpose.
-* We suggest you to follow the instructions in the given **order**, but you will be able to do what you feel is the most important.
-* You will be able to use any relevant vendor or library :
-  * Backend :
-  [Messenger](https://symfony.com/doc/current/components/messenger.html),
-  [Cache](https://symfony.com/doc/current/components/cache.html),
-  [Serializer](https://symfony.com/doc/current/components/serializer.html),
-  [MakerBundle](https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html),
-  [Validator](https://symfony.com/doc/current/components/validator.html),
-  [EventDispatcher](https://symfony.com/doc/current/components/event_dispatcher.html),
-  [Form](https://symfony.com/doc/current/components/form.html),
-  [DependencyInjection](https://symfony.com/doc/current/components/dependency_injection.html),
-  [PHPUnit Bridge](https://symfony.com/doc/current/components/phpunit_bridge.html),
-  [API Platform](https://api-platform.com/), ...
-  * Frontend :
-  [Formik](https://jaredpalmer.com/formik/docs/api/formik),
-  [Cypress](https://docs.cypress.io/examples/examples/recipes.html#Fundamentals)
-* We will not run the app, do not waste time on configuration issues.
-* We will focus on the code you have produced, the general logic, the choices and the quality.
-* Quality will be more important than quantity.
-* You will probably not have enough time to finish all the test, but we expect a minimum amount of code to review.
-
 ## TODO before the test
 
 It is very important that you do these tasks before the beginning of the test. We don't want you to spend some time struggling with your development environment. You will need all the time you can have to go as far as possible in the instructions.
