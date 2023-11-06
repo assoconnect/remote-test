@@ -19,8 +19,8 @@ It is very important that you do these tasks before the beginning of the test. W
 1. Clone the project in your local environment.
 1. Copy, if needed the `docker-compose.override.dist.yml` to `docker-compose.override.yml` to override the default docker configuration :
 For Mac and Windows users, there is some commented changes to optimize the loading of the stack. You will have to install the vendor and the node_modules locally so your editor can have type hinting.
-1. Build the Docker containers by running `docker-compose build` (or `docker-compose.exe build` for Windows from the `Docker Quickstart terminal`) in the root folder of the project
-1. Launch the containers by running `docker-compose up` (or `docker-compose.exe up` from the `Docker Quickstart terminal` for Windows) in the root folder of the project
+1. Build the Docker containers by running `docker compose build` (or `docker-compose.exe build` for Windows from the `Docker Quickstart terminal`) in the root folder of the project
+1. Launch the containers by running `docker compose up` (or `docker-compose.exe up` from the `Docker Quickstart terminal` for Windows) in the root folder of the project
 1. Make sure the project is running correctly :
    * `GET localhost:8001/blog` should **return this JSON** :
    ```json
@@ -29,7 +29,7 @@ For Mac and Windows users, there is some commented changes to optimize the loadi
       "path":"src/Controller/BlogController.php"
    }
    ```
-   *  Running `docker-compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
+   *  Running `docker compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
 1. Give us your **Github username** so we can add you as a collaborator.
 
 > If you are running Docker under Windows, the address your site will be accessible is not localhost, but an IP you can find in the first lines of the `Docker Quickstart Terminal` when you open it.
@@ -52,10 +52,10 @@ If you know what you're doing, and want to modify the ports defined, you can upd
 ---
 ## Troubleshooting
 ### 1. How to run a PHP command
-To run a command (like a Symfony or Composer command), you will need to execute it via `docker-compose`, prefixing it with `docker-compose exec php`.
+To run a command (like a Symfony or Composer command), you will need to execute it via `docker compose`, prefixing it with `docker compose exec php`.
 
-For example, to create a database with the MySQL connection, you will have to run `docker-compose exec php php bin/console doctrine:database:create`.
-To add a package to Composer, you will have to run `docker-compose exec php composer require <your-package>`
+For example, to create a database with the MySQL connection, you will have to run `docker compose exec php php bin/console doctrine:database:create`.
+To add a package to Composer, you will have to run `docker compose exec php composer require <your-package>`
 
 ### 2. How to connect to the MySQL container
 The connection to your database URL is managed throught the `DATABASE_URL` set in the `apps/backend/.env` file. Because we are in a Docker environment, with our services running in distinct containers, you have to reference the MySQL container for the connection :
@@ -64,7 +64,7 @@ The connection to your database URL is managed throught the `DATABASE_URL` set i
 
 Note the **mysql@3306** referencing the port 3306 from the `mysql` container.
 
-### 3. Error in YAML file when running a `docker-compose` command
+### 3. Error in YAML file when running a `docker compose` command
 If you have an error looking like:
 ```bash
 ERROR: The Compose file './../docker-compose.override.yml' is invalid because:
