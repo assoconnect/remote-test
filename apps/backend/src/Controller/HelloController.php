@@ -5,16 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BlogController extends AbstractController
+class HelloController extends AbstractController
 {
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/hello", name="hello")
      */
     public function index()
     {
         return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/BlogController.php',
+            'message' => 'It works!',
         ]);
     }
 }

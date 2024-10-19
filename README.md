@@ -14,23 +14,20 @@ This project contains a basic Docker configuration to run:
 
 It is very important that you do these tasks before the beginning of the test. We don't want you to spend some time struggling with your development environment. You will need all the time you can have to go as far as possible in the instructions.
 
-
 1. Install [Docker engine](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) to their latest versions for your OS. (see [Install Docker](#install-docker))
-1. Clone the project in your local environment.
-1. Copy, if needed the `docker-compose.override.dist.yml` to `docker-compose.override.yml` to override the default docker configuration :
-For Mac and Windows users, there is some commented changes to optimize the loading of the stack. You will have to install the vendor and the node_modules locally so your editor can have type hinting.
-1. Build the Docker containers by running `docker compose build` (or `docker-compose.exe build` for Windows from the `Docker Quickstart terminal`) in the root folder of the project
-1. Launch the containers by running `docker compose up` (or `docker-compose.exe up` from the `Docker Quickstart terminal` for Windows) in the root folder of the project
-1. Make sure the project is running correctly :
-   * `GET localhost:8001/blog` should **return this JSON** :
+2. Clone the project in your local environment.
+3. Build the Docker containers by running `docker compose build` (or `docker-compose.exe build` for Windows from the `Docker Quickstart terminal`) in the root folder of the project
+4. Launch the containers by running `docker compose up` (or `docker-compose.exe up` from the `Docker Quickstart terminal` for Windows) in the root folder of the project
+5. Install backend dependencies by running `composer install` in the backend repository.
+6. Make sure the project is running correctly :
+   * `GET localhost:8001/hello` should **return this JSON** :
    ```json
    {
-      "message":"Welcome to your new controller!",
-      "path":"src/Controller/BlogController.php"
+      "message":"It works!"
    }
    ```
    *  Running `docker compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
-1. Give us your **Github username** so we can add you as a collaborator.
+6. Give us your **Github username** so we can add you as a collaborator.
 
 > If you are running Docker under Windows, the address your site will be accessible is not localhost, but an IP you can find in the first lines of the `Docker Quickstart Terminal` when you open it.
 
@@ -80,11 +77,7 @@ If you're facing "Couln'd connect to Docker Daemon at http+docker://localunixsoc
 ## Install Docker <a href="install-docker"></a>
 ### Windows
 If you have a recent enough Windows, you can download and install [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/).
-
-If you don't meet the system requirements written on this page, you will have to download the older version [Docker toolbox](https://github.com/docker/toolbox/releases). Download and execute the most recent `.exe` from this list.
-
-If you have an error while launching `Docker Quickstart Terminal` afterwards, it might be because of an outdated VirtualBox version. Try downloading the latest version from the [VirtualBox website](https://www.virtualbox.org/wiki/Downloads).
-
+We recommend using WSL2 for the best performances.
 
 
 ### Ubuntu

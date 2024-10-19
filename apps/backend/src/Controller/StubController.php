@@ -111,12 +111,17 @@ class StubController extends AbstractController
 
     private function generateUserData(): array
     {
+        $sections = ['Tennis', 'Soccer', 'Baseball', 'Ultimate', 'Volleyball'];
         return [
-            "email" => $this->faker->email,
-            "firstname" => $this->faker->firstname,
-            "id" => $this->faker->uuid,
-            "lastname" => $this->faker->lastname,
-            "phone" => $this->faker->e164PhoneNumber,
+            'email' => $this->faker->email,
+            'first_name' => $this->faker->firstname,
+            'id' => $this->faker->uuid,
+            'last_name' => $this->faker->lastname,
+            'phone' => $this->faker->e164PhoneNumber,
+            'date_of_birth' => $this->faker->dateTimeBetween("-50 years", "-18 years")
+                ->format("Y-m-d"),
+            'country' => $this->faker->countryCode,
+            'section' => $sections[array_rand($sections)],
         ];
     }
 

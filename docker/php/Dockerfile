@@ -1,4 +1,4 @@
-FROM php:8.0-fpm
+FROM php:8.3-fpm
 
 RUN apt update \
     && apt install -y zlib1g-dev g++ git libicu-dev zip libzip-dev zip \
@@ -11,8 +11,3 @@ RUN apt update \
 WORKDIR /usr/src/backend
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-RUN curl -sS https://get.symfony.com/cli/installer | bash
-RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
-RUN git config --global user.email "you@example.com" \ 
-    && git config --global user.name "Your Name"
