@@ -18,8 +18,8 @@ It is very important that you do these tasks before the beginning of the test. W
 2. Clone the project in your local environment.
 3. Build the Docker containers by running `docker compose build` (or `docker-compose.exe build` for Windows from the `Docker Quickstart terminal`) in the root folder of the project
 4. Launch the containers by running `docker compose up` (or `docker-compose.exe up` from the `Docker Quickstart terminal` for Windows) in the root folder of the project
-5. Install backend dependencies by running `composer install` in the backend repository.
-6. Make sure the project is running correctly :
+5. Install backend dependencies by running `composer install` in the backend container (You can connect to the backend container by running `docker exec -it remote-test-php-1 /bin/bash`). 
+7. Make sure the project is running correctly :
    * `GET localhost:8001/hello` should **return this JSON** :
    ```json
    {
