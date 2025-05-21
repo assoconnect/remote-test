@@ -19,7 +19,7 @@ It is very important that you do these tasks before the beginning of the test. W
 3. Build the Docker containers by running `docker compose build` (or `docker-compose.exe build` for Windows from the `Docker Quickstart terminal`) in the root folder of the project
 4. Launch the containers by running `docker compose up` (or `docker-compose.exe up` from the `Docker Quickstart terminal` for Windows) in the root folder of the project
 5. Install backend dependencies by running `composer install` in the backend container (You can connect to the backend container by running `docker exec -it remote-test-php-1 /bin/bash`). 
-7. Make sure the project is running correctly :
+6. Make sure the project is running correctly :
    * `GET localhost:8001/hello` should **return this JSON** :
    ```json
    {
@@ -27,7 +27,6 @@ It is very important that you do these tasks before the beginning of the test. W
    }
    ```
    *  Running `docker compose exec php /usr/src/backend/vendor/bin/phpunit` should show **1 successful test**
-6. Give us your **Github username** so we can add you as a collaborator.
 
 > If you are running Docker under Windows, the address your site will be accessible is not localhost, but an IP you can find in the first lines of the `Docker Quickstart Terminal` when you open it.
 
