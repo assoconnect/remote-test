@@ -56,4 +56,4 @@ services:
         volumes:
             - './apps/frontend:/usr/src/frontend'
         ports:
-            - '${REACT_PORT}:3000'
+            - '${REACT_PORT}:${REACT_PORT}'

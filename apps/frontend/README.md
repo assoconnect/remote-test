@@ -1,15 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-# Switch from TypeScript to JavaScript
-
-- Close Docker
-- Run in root:
-
-```
-mv -f ./apps/frontend/README.md ./apps/README.md && rm -rf ./apps/frontend && yarn create react-app ./apps/frontend && mv -f ./apps/README.md ./apps/frontend/README.md && touch ./apps/frontend/.env
-```
-
-- Build and run docker: https://github.com/assoconnect/remote-test#todo-before-the-test
+This project was bootstrapped with [Vite](https://vitejs.fr/guide/).
 
 # Commands
 
@@ -18,7 +7,7 @@ mv -f ./apps/frontend/README.md ./apps/README.md && rm -rf ./apps/frontend && ya
 Run in root:
 
 ```
-docker-compose exec react yarn
+docker-compose exec react npm
 ```
 
 ## Install one dependency
@@ -26,7 +15,7 @@ docker-compose exec react yarn
 Run in root:
 
 ```
-cd ./apps/frontend/ && yarn add <package_name> && cd ../.. && docker-compose exec react yarn
+cd ./apps/frontend/ && npm install <package_name> && cd ../.. && docker-compose exec react npm
 ```
 
 # Stub API endpoint documentation

@@ -78,7 +78,6 @@ If you're facing "Couln'd connect to Docker Daemon at http+docker://localunixsoc
 If you have a recent enough Windows, you can download and install [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/).
 We recommend using WSL2 for the best performances.
 
-
 ### Ubuntu
 You can follow this good tutorial for installing [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) and [Docker Composer](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04).
 
